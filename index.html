@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon-16x16.png" type="image/x-icon" />
+  <title>Kelig</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-gradient-to-br from-purple-100 via-blue-100 to-pink-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow p-6">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="cv.pdf" target="_blank" class="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700">Voir mon CV</a>
+      <nav class="space-x-4">
+        <a href="#about" class="text-purple-600 hover:underline">Présentation</a>
+        <a href="#skills" class="text-purple-600 hover:underline">Compétences</a>
+        <a href="#experience" class="text-purple-600 hover:underline">Parcours</a>
+        <a href="#projects" class="text-purple-600 hover:underline">Projets</a>
+        <a href="#contact" class="text-purple-600 hover:underline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main x-data="{ section: '' }" @scroll.window="section = [...document.querySelectorAll('section')].reduce((acc, sec) => (window.scrollY + window.innerHeight / 2 > sec.offsetTop ? sec.id : acc), '')">
+
+  <!-- About Section -->
+  <section id="about" class="p-10 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <img src="me.JPG" alt="Photo de moi" class="mx-auto rounded-full w-36 h-36 object-cover mb-4 border-4 border-purple-300" />
+      <h2 class="text-2xl font-semibold mb-2 text-purple-800">Kelig Poiron</h2>
+      <p class="text-gray-600">Etudiant ingénieur en classe préparatoire intégrée à l'ESIEA Laval, je suis passionné par l'informatique et les langues vivantes. Voulant me spécialiser en Software Engineering, je suis en recherche d'alternance.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="p-10 bg-purple-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-xl font-bold mb-6 text-purple-700">Compétences</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- compétences individuelles ici -->
+         <div class="bg-white p-4 rounded shadow text-center transform transition duration-300 hover:scale-105 hover:shadow-xl hover:bg-purple-100">
+          <img src="SoftwareDevelopment.png" alt="Software Development" class="mx-auto mb-2 transition-transform duration-300 group-hover:scale-110" style="width: auto; height: 75px;" />
+          <h3 class="text-purple-700 font-semibold text-lg group-hover:text-purple-900 transition-colors duration-300">Développement logiciel</h3>
+          <p class="text-gray-600 text-sm">Je possède de bonnes connaissances en programmation logiciel et je sais utiliser de nombreux langages comme le C, Python ou encore Rust.</p>
+        </div>
+         <div class="bg-white p-4 rounded shadow text-center transform transition duration-300 hover:scale-105 hover:shadow-xl hover:bg-purple-100">
+          <img src="MontageVideo.png" alt="Montage vidéo" class="mx-auto mb-2 transition-transform duration-300 group-hover:scale-110" style="width: auto; height: 75px;" />
+          <h3 class="text-purple-700 font-semibold text-lg">Montage vidéo</h3>
+          <p class="text-gray-600 text-sm">Je sais utiliser Davinci Resolve, un logiciel de montage vidéo réputé.</p>
+        </div>
+         <div class="bg-white p-4 rounded shadow text-center transform transition duration-300 hover:scale-105 hover:shadow-xl hover:bg-purple-100">
+          <img src="MontagePhoto.webp" alt="Montage photo" class="mx-auto mb-2 transition-transform duration-300 group-hover:scale-110" style="width: auto; height: 75px;" />
+          <h3 class="text-purple-700 font-semibold text-lg">Montage photo</h3>
+          <p class="text-gray-600 text-sm">Je sais retoucher des images, les améliorer, et créer des affiches à l'aide du logiciel Photoshop.</p>
+        </div>
+         <div class="bg-white p-4 rounded shadow text-center transform transition duration-300 hover:scale-105 hover:shadow-xl hover:bg-purple-100">
+          <img src="Office365.svg" alt="Office365" class="mx-auto mb-2 transition-transform duration-300 group-hover:scale-110"style="width: auto; height: 75px;" />
+          <h3 class="text-purple-700 font-semibold text-lg">Pack office</h3>
+          <p class="text-gray-600 text-sm">Je sais utliser les logiciels du pack office tels que Word, Powerpoint, ou encore Excel.</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center transform transition duration-300 hover:scale-105 hover:shadow-xl hover:bg-purple-100">
+          <img src="Langues.png" alt="Langues" class="mx-auto mb-2 transition-transform duration-300 group-hover:scale-110" style="width: auto; height: 75px;" />
+          <h3 class="text-purple-700 font-semibold text-lg">Langues</h3>
+          <p class="text-gray-600 text-sm">Je sais parler couramment Anglais et j'ai un niveau JLPT N4 en Japonais.</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center transform transition duration-300 hover:scale-105 hover:shadow-xl hover:bg-purple-100">
+          <img src="SoftSkills.png" alt="SoftSkills" class="mx-auto mb-2 transition-transform duration-300 group-hover:scale-110" style="width: auto; height: 75px;" />
+          <h3 class="text-purple-700 font-semibold text-lg">Soft Skills</h3>
+          <p class="text-gray-600 text-sm">Au cours des mes différentes expériences professionnelles et personnelles, j'ai pu développer de nombreux soft skills comme le travail d'équipe, la flexibilité, la capacité à travailler sous pression et la capacité à faire face à l'incertitude.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="p-10 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-xl font-bold mb-10 text-purple-700 text-center">Parcours</h2>
+        <div class="space-y-16">
+          <template x-for="(item, index) in [
+            { title: 'Stage au Japon', 
+            date: 'Juillet-Août 2024', 
+            desc: '[Hôtel Higashidate] - Immersion professionnelle de 2 mois au Japon grâce à l\'association Horizon Japon. Ce stage m\'a permis de développer mon autonomie, ma capacité d\'adaptation et mes compétences en japonais dans un environnement exigeant.', 
+            img: 'Japon.png' },
+            { title: 'Entrée en école d\'ingénieurs', 
+            date: 'Septembre 2023', 
+            desc: '[ESIEA Laval] - Intégration de l\'école d\'ingénieurs du numérique ESIEA en classe préparatoire intégrée. Développement de solides bases en mathématiques, informatique et travail en équipe.', 
+            img: 'Esiea.png' },
+            { title: 'Baccalauréat Scientifique', 
+            date: '2023',   
+            desc: '[Lycée Aimé Césaire Clisson] - Obtention du baccalauréat général (mention très bien) avec spécialités mathématiques et NSI (Numérique et Sciences Informatiques), option mathématiques expertes. Première approche concrète de la programmation et de la logique informatique.', 
+            img: 'ChapeauBachelier.png' },
+            { title: 'Stagiaire en cabinet d\'experts comptables', 
+            date: 'Février 2022', 
+            desc: '[SAS 2AE Conseil] - Stage d\'observation au sein d\'un cabinet d\'expertise comptable. Découverte du monde professionnel et des enjeux liés à la rigueur.', 
+            img: '2AE.jpg' },
+            { title: 'Vendeur Horticole', 
+            date: '2018-2024', 
+            desc: '[EARL Les Ormeaux du Nord] - Expérience saisonnière régulière à la Toussaint. Intéractions avec la clientèle, gestion des commandes et des stocks. Renforcement des compétences relationnelles, du sens du service et de la polyvalence.', 
+            img: 'Chrysantheme.webp' }
+          ]" :key="index">
+            <div :class="index % 2 === 0 ? 'flex items-center justify-start' : 'flex items-center justify-end'">
+              <div class="w-full md:w-1/2 flex flex-col items-start space-y-2 px-4 order-1" :class="index % 2 === 0 ? 'md:order-1' : 'md:order-2'">
+                <h3 class="text-lg font-bold text-purple-800" x-text="item.title"></h3>
+                <p class="text-sm text-purple-600 font-semibold" x-text="item.date"></p>
+                <p class="text-gray-600" x-text="item.desc"></p>
+              </div>
+              <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-purple-300 bg-white flex-shrink-0 mx-4 order-2" :class="index % 2 === 0 ? 'md:order-2' : 'md:order-1'">
+                <img :src="`${item.img}`" alt="Logo" class="object-cover w-full h-full" />
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="p-10 bg-purple-50">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-xl font-bold mb-6 text-purple-700">Projets</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <template x-for="(project, index) in [
+            { title: 'Jeu d\'échecs', 
+            desc: 'Durant mon année de terminale, nous avons créé, à trois, un jeu d\'échecs en Python.', 
+            img: 'Echecs.png' },
+            { title: 'Jeu de combat', 
+            desc: 'Durant ma première année à l\'ESIEA, nous avons codé en binôme un jeu de combat style Super Smash Bros en C. ', 
+            img: 'SPS.png' },
+            { title: 'Base de données', 
+            desc: 'Durant ma deuxième année à l\'ESIEA, nous avons codé en binôme une base de données fonctionnelle en C, en utilisant des AVL. ', 
+            img: 'BDD.png' },
+            { title: 'IA pour le jeu Quoridor', 
+            desc: 'Durant ma deuxième année à l\'ESIEA, nous avons codé en binôme une IA jouant au jeu Quoridor en C. ', 
+            img: 'Quoridor.png' }
+          ]" :key="index">
+            <div class="relative group rounded overflow-hidden shadow-lg">
+              <img :src="`${project.img}`" alt="Projet" class="w-full h-48 object-cover" />
+              <div class="absolute inset-0 bg-white bg-opacity-80 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center p-4 transition-opacity">
+                <h3 class="text-purple-800 font-semibold text-lg" x-text="project.title"></h3>
+                <p class="text-sm text-gray-600 mt-2" x-text="project.desc"></p>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="p-10 bg-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-xl font-bold mb-6 text-purple-700">Vous souhaitez me contacter ?</h2>
+        <a href="mailto:poiron@et.esiea.fr" class="text-purple-600 hover:underline">poiron@et.esiea.fr</a>
+      </div>
+    </section>
+
+  <!-- Footer -->
+  <footer class="p-6 text-center text-gray-600 text-sm">
+    &copy; 2025 Kelig Poiron. 
+  </footer>
+
+</body>
+</html>
